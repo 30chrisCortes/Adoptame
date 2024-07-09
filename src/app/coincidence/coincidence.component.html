@@ -14,13 +14,20 @@
     <div class="col-md-4 col-sm-6 mb-4" *ngFor="let coincidence of coincidences">
       <div class="card">
         <div class="card-body card-color">
+          <!-- Mostrar la imagen de la mascota si existe -->
+          @if (coincidence.mascota.imagen) {
           <img [src]="coincidence.mascota.imagen" class="card-img-top" alt="">
-          @if (coincidence.mascota.especie_id === 1) {
-            <!-- especie perro -->
+          
+            <!-- Mostrar imagen por especie si no hay imagen de mascota -->
+          }@else {
+            @if (coincidence.mascota.especie_id === 1) {
+            <!-- Especie perro -->
             <img src="../../assets/images/home/perro.jpg" alt="Placeholder" class="imagen img-fluid">
-          } @else if (coincidence.mascota.especie_id === 2) {
-            <!-- especie gato -->
+            }
+            @else if (coincidence.mascota.especie_id === 2) {
+            <!-- Especie gato -->
             <img src="../../assets/images/home/gato.png" alt="Placeholder" class="imagen img-fluid">
+            }
           }
           <h2 class="card-title">{{coincidence.mascota.nombre}}</h2>
           <p class="card-text">
