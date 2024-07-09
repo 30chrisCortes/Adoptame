@@ -9,7 +9,7 @@ import { switchMap, map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  private apiUrl = 'http://127.0.0.1:8000/api/';
+  private apiUrl = 'https://adoptaog.pythonanywhere.com/api/';
 
   private clientId = '476035747804-j0i47ss2bihor646g1qaucu58pcva6je.apps.googleusercontent.com';
 

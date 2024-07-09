@@ -8,7 +8,7 @@ import { StorageService } from './storage.service';
 })
 export class EventService {
 
-  private apiUrl = 'http://localhost:8000/api/eventos/';
+  private apiUrl = 'https://adoptaog.pythonanywhere.com/api/eventos/';
 
   constructor(private http: HttpClient, private storageService: StorageService) { }
   

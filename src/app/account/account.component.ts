@@ -15,7 +15,7 @@ import { NavstyComponent } from '../navsty/navsty.component';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
-  baseUrl: string = 'http://localhost:8000';
+  baseUrl: string = 'https://adoptaog.pythonanywhere.com';
   profileImageUrl: string | ArrayBuffer | null = null;
   regions: any[] = [];
   communes: any[] = [];
