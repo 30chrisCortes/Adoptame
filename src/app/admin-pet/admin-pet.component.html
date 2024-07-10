@@ -39,7 +39,23 @@
             </thead>
             <tbody>
               <tr *ngFor="let pet of filteredPets.reverse()">
-                <td><img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+                <td>
+                  <!-- Mostrar la imagen de la mascota si existe -->
+                  @if (pet.imagen) {
+
+                  <img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+
+                  <!-- Mostrar imagen por especie si no hay imagen de mascota -->
+                  }@else {
+                  @if (pet.especie_id === 1) {
+                  <!-- Especie perro -->
+                  <img src="../../assets/images/home/perro.jpg" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  @else if (pet.especie_id === 2) {
+                  <!-- Especie gato -->
+                  <img src="../../assets/images/home/gato.png" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  }
                 </td>
                 <td>{{ pet.nombre }}</td>
                 <td>{{ pet.estado }}</td>
@@ -73,7 +89,22 @@
             </thead>
             <tbody>
               <tr *ngFor="let pet of filteredPets">
-                <td><img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+                <td><!-- Mostrar la imagen de la mascota si existe -->
+                  @if (pet.imagen) {
+
+                  <img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+
+                  <!-- Mostrar imagen por especie si no hay imagen de mascota -->
+                  }@else {
+                  @if (pet.especie_id === 1) {
+                  <!-- Especie perro -->
+                  <img src="../../assets/images/home/perro.jpg" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  @else if (pet.especie_id === 2) {
+                  <!-- Especie gato -->
+                  <img src="../../assets/images/home/gato.png" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  }
                 </td>
                 <td>{{ pet.nombre }}</td>
                 <td>
@@ -121,7 +152,22 @@
             </thead>
             <tbody>
               <tr *ngFor="let pet of filteredPets">
-                <td><img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+                <td><!-- Mostrar la imagen de la mascota si existe -->
+                  @if (pet.imagen) {
+
+                  <img [src]="pet.imagen" alt="Foto de {{ pet.nombre }}" height="50" class="img-table rounded-circle">
+
+                  <!-- Mostrar imagen por especie si no hay imagen de mascota -->
+                  }@else {
+                  @if (pet.especie_id === 1) {
+                  <!-- Especie perro -->
+                  <img src="../../assets/images/home/perro.jpg" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  @else if (pet.especie_id === 2) {
+                  <!-- Especie gato -->
+                  <img src="../../assets/images/home/gato.png" alt="Placeholder" class="img-table rounded-circle">
+                  }
+                  }
                 </td>
                 <td>{{ pet.nombre }}</td>
                 <td>
@@ -551,7 +597,8 @@
                   <!-- Especie Mascota -->
                   <div class="col-md-6 input-2 form-group">
                     <label for="especie">Especie:</label>
-                    <select id="especie" formControlName="especie" class="form-control" (change)="onEspecieChange($event)">
+                    <select id="especie" formControlName="especie" class="form-control"
+                      (change)="onEspecieChange($event)">
                       <option value="" disabled selected>Selecciona una opción</option>
                       <option *ngFor="let especie of especies" [value]="especie.id">{{ especie.nombreEspecie }}</option>
                     </select>
